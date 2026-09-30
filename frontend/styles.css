@@ -1,0 +1,675 @@
+:root {
+	--navy-900: #010736;
+	--navy-800: #0D1C42;
+	--navy-600: #22396F;
+	--cream-100: #FCF1D0;
+	--gold-200: #F8E0A4;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	background: var(--cream-100);
+	color: var(--navy-800);
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+legend,
+caption {
+	color: var(--navy-900);
+	font-family: Georgia, "Playfair Display", serif;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+p {
+	margin-top: 0;
+}
+
+a {
+	color: var(--navy-600);
+	text-underline-offset: 0.2em;
+}
+
+a:hover {
+	text-decoration-thickness: 2px;
+}
+
+button,
+input,
+select {
+	font: inherit;
+}
+
+.skip-link {
+	position: fixed;
+	z-index: 10;
+	top: 0.75rem;
+	left: 0.75rem;
+	transform: translateY(-160%);
+	border-radius: 8px;
+	background: var(--gold-200);
+	color: var(--navy-900);
+	padding: 0.65rem 1rem;
+}
+
+.skip-link:focus {
+	transform: translateY(0);
+}
+
+.site-header {
+	min-height: 5.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 0.8rem max(1.25rem, calc((100% - 1200px) / 2));
+	background: var(--navy-900);
+	color: var(--cream-100);
+}
+
+.site-brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.7rem;
+	color: var(--cream-100);
+	font-family: Georgia, "Playfair Display", serif;
+	font-size: 1.35rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.site-logo {
+	width: 2.4rem;
+	height: 2.4rem;
+	color: var(--gold-200);
+}
+
+.site-header nav ul {
+	display: flex;
+	align-items: center;
+	gap: clamp(1rem, 3vw, 2.5rem);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.site-header nav a {
+	color: var(--cream-100);
+	font-weight: 600;
+	text-decoration: none;
+	transition: color 180ms ease;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus-visible {
+	color: var(--gold-200);
+}
+
+.hero {
+	padding: clamp(4.5rem, 10vw, 8rem) max(1.25rem, calc((100% - 1200px) / 2));
+	background: linear-gradient(118deg, var(--navy-900), var(--navy-800));
+	color: var(--cream-100);
+}
+
+.hero h1 {
+	max-width: 13ch;
+	margin-bottom: 1.25rem;
+	color: var(--cream-100);
+	font-size: clamp(2.6rem, 6vw, 5rem);
+}
+
+.hero > p:not(.eyebrow) {
+	max-width: 38rem;
+	margin-bottom: 2rem;
+	color: var(--cream-100);
+	font-size: 1.15rem;
+}
+
+.eyebrow {
+	margin-bottom: 0.65rem;
+	color: var(--navy-600);
+	font-size: 0.78rem;
+	font-weight: 800;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.hero .eyebrow {
+	color: var(--gold-200);
+}
+
+.hero-stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.25rem 2.75rem;
+	max-width: 54rem;
+	margin: 3rem 0 0;
+	border-top: 1px solid rgba(248, 224, 164, 0.45);
+	padding: 1.25rem 0 0;
+	list-style: none;
+}
+
+.hero-stats li {
+	display: flex;
+	flex-direction: column;
+	min-width: 8rem;
+}
+
+.hero-stats strong {
+	color: var(--gold-200);
+	font-family: Georgia, "Playfair Display", serif;
+	font-size: 1.8rem;
+	line-height: 1.15;
+}
+
+.hero-stats span {
+	color: var(--cream-100);
+	font-size: 0.88rem;
+	font-weight: 650;
+}
+
+.button {
+	min-height: 2.9rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid transparent;
+	border-radius: 8px;
+	padding: 0.65rem 1.15rem;
+	font-weight: 750;
+	line-height: 1.2;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.button-primary {
+	background: var(--gold-200);
+	color: var(--navy-900);
+}
+
+.button-primary:hover {
+	transform: translateY(-2px);
+	background: var(--cream-100);
+	box-shadow: 0 5px 14px rgba(1, 7, 54, 0.2);
+}
+
+.button-secondary {
+	border-color: var(--navy-600);
+	background: transparent;
+	color: var(--navy-800);
+}
+
+.button-secondary:hover {
+	background: var(--navy-800);
+	color: var(--cream-100);
+}
+
+.events-section,
+.registration-section,
+.admin-section {
+	padding: clamp(3.5rem, 7vw, 6rem) max(1.25rem, calc((100% - 1200px) / 2));
+}
+
+.section-heading {
+	max-width: 48rem;
+	margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+	margin-bottom: 0.65rem;
+	font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.section-heading h2::after {
+	width: 3.25rem;
+	height: 3px;
+	display: block;
+	margin-top: 0.7rem;
+	background: var(--gold-200);
+	content: "";
+}
+
+.section-heading > p:last-child {
+	margin-bottom: 0;
+	color: var(--navy-600);
+}
+
+.event-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 1.25rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.event-card {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	border: 1px solid rgba(34, 57, 111, 0.15);
+	border-radius: 12px;
+	padding: 1rem;
+	background: #fff;
+	box-shadow: 0 3px 12px rgba(1, 7, 54, 0.08);
+	transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.event-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 24px rgba(1, 7, 54, 0.14);
+}
+
+.event-card > img {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	border-radius: 8px;
+	background: var(--cream-100);
+	object-fit: cover;
+}
+
+.featured-badge {
+	display: inline-flex;
+	align-items: center;
+	margin: 0.9rem 0 0;
+	border: 1px solid var(--navy-600);
+	border-radius: 999px;
+	padding: 0.25rem 0.65rem;
+	background: var(--gold-200);
+	color: var(--navy-900);
+	font-size: 0.75rem;
+	font-weight: 800;
+	line-height: 1.25;
+}
+
+.event-category {
+	margin: 1rem 0 0.3rem;
+	color: var(--navy-600);
+	font-size: 0.78rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.event-card h3 {
+	margin-bottom: 0.7rem;
+	font-size: 1.45rem;
+}
+
+.event-details {
+	width: 100%;
+	display: grid;
+	gap: 0.35rem;
+	margin: 0 0 1rem;
+	padding: 0;
+	color: var(--navy-800);
+	font-size: 0.93rem;
+	list-style: none;
+}
+
+.event-card .button {
+	margin-top: auto;
+}
+
+.registration-section {
+	background: #fff;
+}
+
+.registration-section form {
+	max-width: 54rem;
+	border: 1px solid rgba(34, 57, 111, 0.2);
+	border-radius: 16px;
+	padding: clamp(1.5rem, 4vw, 2.75rem);
+	background: var(--cream-100);
+	box-shadow: 0 10px 30px rgba(1, 7, 54, 0.1);
+}
+
+.registration-section fieldset {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	align-items: start;
+	gap: 0.25rem 1.75rem;
+	min-width: 0;
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+.field-wide {
+	grid-column: 1 / -1;
+}
+
+.registration-section legend {
+	width: 100%;
+	margin-bottom: 1.5rem;
+	border-bottom: 1px solid rgba(34, 57, 111, 0.25);
+	padding: 0 0 0.85rem;
+	font-size: 1.6rem;
+}
+
+.form-field {
+	min-width: 0;
+	margin: 0 0 0.85rem;
+}
+
+.form-field label {
+	display: block;
+	margin-bottom: 0.35rem;
+	color: var(--navy-900);
+	font-weight: 700;
+}
+
+.form-field input:not([type="checkbox"]),
+.form-field select {
+	width: 100%;
+	min-height: 2.9rem;
+	border: 1px solid var(--navy-600);
+	border-radius: 8px;
+	padding: 0.6rem 0.75rem;
+	background: #fff;
+	color: var(--navy-900);
+}
+
+.form-field input:not([type="checkbox"]):hover,
+.form-field select:hover {
+	border-color: var(--navy-900);
+}
+
+.form-field small {
+	display: block;
+	margin-top: 0.3rem;
+	color: var(--navy-600);
+	font-size: 0.82rem;
+}
+
+.checkbox-field {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.65rem;
+	grid-column: 1 / -1;
+	margin: 0.25rem 0 1rem;
+}
+
+.checkbox-field input {
+	width: 1.15rem;
+	height: 1.15rem;
+	flex: 0 0 auto;
+	margin: 0.25rem 0 0;
+	accent-color: var(--navy-800);
+}
+
+.checkbox-field label {
+	margin: 0;
+}
+
+.registration-section form > fieldset > .button,
+.form-status {
+	grid-column: 1 / -1;
+	justify-self: start;
+}
+
+.form-status {
+	min-height: 1.5em;
+	margin: 0.4rem 0 0;
+	color: var(--navy-800);
+	font-weight: 650;
+}
+
+.button-submit {
+	min-width: 15rem;
+	margin-top: 0.5rem;
+	border-color: var(--navy-800);
+	background: var(--navy-800);
+	color: var(--cream-100);
+	font-size: 1.05rem;
+	box-shadow: 0 4px 12px rgba(1, 7, 54, 0.22);
+}
+
+.button-submit:hover {
+	transform: translateY(-2px);
+	background: var(--navy-900);
+	color: var(--gold-200);
+	box-shadow: 0 8px 18px rgba(1, 7, 54, 0.3);
+}
+
+.registration-section form > fieldset > .button-submit {
+	justify-self: stretch;
+	margin-top: 0.75rem;
+}
+
+.form-status {
+	justify-self: center !important;
+	text-align: center;
+}
+
+.error,
+input.error,
+select.error {
+	border: 2px solid var(--navy-900) !important;
+	box-shadow: 0 0 0 2px var(--gold-200);
+}
+
+.success,
+input.success,
+select.success {
+	border: 2px solid var(--navy-600) !important;
+	box-shadow: 0 0 0 2px var(--cream-100);
+}
+
+.form-field.error::after,
+.form-field:has(> .error)::after {
+	content: "\2716 Please check this field.";
+	color: var(--navy-900);
+	font-size: 0.88rem;
+	font-weight: 700;
+}
+
+.form-field.success::after,
+.form-field:has(> .success)::after {
+	content: "\2713 Looks good.";
+	color: var(--navy-600);
+	font-size: 0.88rem;
+	font-weight: 700;
+}
+
+.form-field.has-inline-message::after {
+	content: none;
+}
+
+.field-error {
+	color: var(--navy-900) !important;
+	font-weight: 700;
+}
+
+.filter-field {
+	max-width: 24rem;
+	margin-bottom: 1rem;
+}
+
+.attendees-table {
+	width: 100%;
+	border-collapse: collapse;
+	background: #fff;
+	color: var(--navy-800);
+	text-align: left;
+}
+
+.attendees-table caption {
+	margin-bottom: 0.75rem;
+	font-size: 1.1rem;
+	text-align: left;
+}
+
+.attendees-table th,
+.attendees-table td {
+	border: 1px solid rgba(34, 57, 111, 0.2);
+	padding: 0.8rem;
+	vertical-align: top;
+}
+
+.attendees-table th {
+	background: var(--navy-800);
+	color: var(--cream-100);
+	font-weight: 700;
+}
+
+.attendees-table tbody tr:nth-child(even) {
+	background: var(--cream-100);
+}
+
+.empty-attendees td {
+	color: var(--navy-600);
+	text-align: center;
+}
+
+.site-footer {
+	padding: 2rem max(1.25rem, calc((100% - 1200px) / 2));
+	background: var(--navy-900);
+	color: var(--cream-100);
+	text-align: center;
+}
+
+.site-footer p {
+	margin: 0.35rem 0;
+}
+
+.site-footer a {
+	color: var(--gold-200);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+	outline: 3px solid var(--navy-900);
+	outline-offset: 3px;
+}
+
+.site-header a:focus-visible,
+.hero a:focus-visible,
+.site-footer a:focus-visible {
+	outline-color: var(--gold-200);
+}
+
+@media (max-width: 900px) {
+	.site-header {
+		padding-right: 1.25rem;
+		padding-left: 1.25rem;
+	}
+
+	.hero,
+	.events-section,
+	.registration-section,
+	.admin-section,
+	.site-footer {
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
+	}
+}
+
+@media (max-width: 599px) {
+	.site-header {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 0.7rem;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	.site-header nav {
+		width: 100%;
+	}
+
+	.site-header nav ul {
+		justify-content: space-between;
+		gap: 0.75rem;
+	}
+
+	.hero,
+	.events-section,
+	.registration-section,
+	.admin-section,
+	.site-footer {
+		padding-right: 1rem;
+		padding-left: 1rem;
+	}
+
+	.hero {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+
+	.registration-section fieldset {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.checkbox-field,
+	.field-wide,
+	.registration-section form > fieldset > .button,
+	.form-status {
+		grid-column: 1;
+	}
+
+	.attendees-table {
+		display: block;
+		max-width: 100%;
+		overflow-x: auto;
+		overscroll-behavior-x: contain;
+		white-space: nowrap;
+	}
+
+	.attendees-table th,
+	.attendees-table td {
+		min-width: 9rem;
+	}
+}
+
+@media (max-width: 1100px) {
+	.event-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 599px) {
+	.event-grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.button-submit {
+		width: 100%;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
+}
