@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Discover and register for university campus events with CampusConnect.">
+	<title>CampusConnect | University Events</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<a class="skip-link" href="#main-content">Skip to main content</a>
+
+	<header class="site-header">
+		<a class="site-brand" href="#home" aria-label="CampusConnect home">
+			<svg class="site-logo" viewBox="0 0 40 40" role="img" aria-label="CampusConnect logo">
+				<path d="M20 3 36 12v16L20 37 4 28V12L20 3Z" fill="none" stroke="currentColor" stroke-width="2.5"></path>
+				<path d="M25.8 14.4a8 8 0 1 0 0 11.2M20 12v16m-8-8h16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+			</svg>
+			<span>CampusConnect</span>
+		</a>
+		<nav aria-label="Main navigation">
+			<ul>
+				<li><a href="#events">Events</a></li>
+				<li><a href="#register">Register</a></li>
+				<li><a href="#admin">Admin</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main id="main-content">
+		<section class="hero" id="home" aria-labelledby="hero-title">
+			<p class="eyebrow">Your campus, in motion</p>
+			<h1 id="hero-title">Make room for<br>what brings us together.</h1>
+			<p>Find your people, try something new, and make this semester count.</p>
+			<a class="button button-primary" href="#events">Explore upcoming events</a>
+			<ul class="hero-stats" aria-label="CampusConnect statistics">
+				<li><strong>24</strong><span>Events</span></li>
+				<li><strong>1,200+</strong><span>Students</span></li>
+				<li><strong>12</strong><span>Organizations</span></li>
+			</ul>
+		</section>
+
+		<section class="events-section" id="events" aria-labelledby="events-title">
+			<header class="section-heading">
+				<p class="eyebrow">Find your next thing</p>
+				<h2 id="events-title">Upcoming Events</h2>
+				<p>Good ideas happen when campus comes together.</p>
+			</header>
+
+			<ul class="event-grid">
+				<li>
+					<article class="event-card" data-event-id="1">
+						<img src="images/event-1.svg" alt="Students collaborating around a prototype at an innovation workshop">
+						<p class="featured-badge">Featured</p>
+						<p class="event-category">Innovation</p>
+						<h3>Campus Innovation Week</h3>
+						<ul class="event-details" aria-label="Event details">
+							<li><time datetime="2026-10-14T09:00">October 14, 2026 · 9:00 AM – 12:00 PM</time></li>
+							<li>Engineering Innovation Hub</li>
+							<li><span class="seats-remaining">58 seats remaining</span></li>
+						</ul>
+						<button class="button button-secondary" type="button" data-register-event="1" aria-label="Register for Campus Innovation Week">Register</button>
+					</article>
+				</li>
+				<li>
+					<article class="event-card" data-event-id="2">
+						<img src="images/event-2.svg" alt="Colorful student paintings displayed in a campus art gallery">
+						<p class="event-category">Arts &amp; Culture</p>
+						<h3>Arts After Hours</h3>
+						<ul class="event-details" aria-label="Event details">
+							<li><time datetime="2026-10-17T17:30">October 17, 2026 · 5:30 PM – 8:00 PM</time></li>
+							<li>University Art Gallery</li>
+							<li><span class="seats-remaining">39 seats remaining</span></li>
+						</ul>
+						<button class="button button-secondary" type="button" data-register-event="2" aria-label="Register for Arts After Hours">Register</button>
+					</article>
+				</li>
+				<li>
+					<article class="event-card" data-event-id="3">
+						<img src="images/event-3.svg" alt="Volunteers planting young trees on a green university campus">
+						<p class="event-category">Community</p>
+						<h3>Green Campus Day</h3>
+						<ul class="event-details" aria-label="Event details">
+							<li><time datetime="2026-10-21T08:00">October 21, 2026 · 8:00 AM – 12:00 PM</time></li>
+							<li>North Campus Garden</li>
+							<li><span class="seats-remaining">49 seats remaining</span></li>
+						</ul>
+						<button class="button button-secondary" type="button" data-register-event="3" aria-label="Register for Green Campus Day">Register</button>
+					</article>
+				</li>
+				<li>
+					<article class="event-card" data-event-id="4">
+						<img src="images/event-4.svg" alt="Guest speaker sharing ideas with students in a lecture hall">
+						<p class="event-category">Talks</p>
+						<h3>Founders Forum</h3>
+						<ul class="event-details" aria-label="Event details">
+							<li><time datetime="2026-10-24T13:00">October 24, 2026 · 1:00 PM – 4:00 PM</time></li>
+							<li>Rizal Lecture Theatre</li>
+							<li><span class="seats-remaining">79 seats remaining</span></li>
+						</ul>
+						<button class="button button-secondary" type="button" data-register-event="4" aria-label="Register for Founders Forum">Register</button>
+					</article>
+				</li>
+			</ul>
+		</section>
+
+		<section class="registration-section" id="register" aria-labelledby="register-title">
+			<header class="section-heading">
+				<p class="eyebrow">Save your spot</p>
+				<h2 id="register-title">Register for an Event</h2>
+			</header>
+
+			<form id="registration-form" action="#register" method="post">
+				<fieldset>
+					<legend>Your details</legend>
+					<p class="form-field">
+						<label for="first-name">First Name</label>
+						<input id="first-name" name="firstName" type="text" autocomplete="given-name" maxlength="100" required aria-label="First Name">
+					</p>
+					<p class="form-field">
+						<label for="last-name">Last Name</label>
+						<input id="last-name" name="lastName" type="text" autocomplete="family-name" maxlength="100" required aria-label="Last Name">
+					</p>
+					<p class="form-field">
+						<label for="university-email">University Email</label>
+						<input id="university-email" name="email" type="email" autocomplete="email" maxlength="255" pattern="[A-Za-z0-9._%+-]+@dlsud\.edu\.ph" aria-describedby="email-help" required aria-label="University Email">
+						<small id="email-help">Use your university address ending in @dlsud.edu.ph.</small>
+					</p>
+					<p class="form-field">
+						<label for="event-select">Event</label>
+						<select id="event-select" name="event" required aria-label="Event">
+							<option value="">Choose an event</option>
+							<option value="1">Campus Innovation Week</option>
+							<option value="2">Arts After Hours</option>
+							<option value="3">Green Campus Day</option>
+							<option value="4">Founders Forum</option>
+						</select>
+					</p>
+					<button class="button button-submit" type="submit">Submit registration</button>
+					<p class="form-status" id="form-status" aria-live="polite" role="status"></p>
+				</fieldset>
+			</form>
+		</section>
+
+		<section class="admin-section" id="admin" aria-labelledby="admin-title">
+			<header class="section-heading">
+				<p class="eyebrow">Event desk</p>
+				<h2 id="admin-title">Administrator: Registered Attendees</h2>
+			</header>
+
+			<p class="form-field filter-field">
+				<label for="attendee-event-filter">Filter by event</label>
+				<select id="attendee-event-filter" name="attendeeEventFilter" aria-label="Filter registered attendees by event">
+					<option value="all">All events</option>
+					<option value="1">Campus Innovation Week</option>
+					<option value="2">Arts After Hours</option>
+					<option value="3">Green Campus Day</option>
+					<option value="4">Founders Forum</option>
+				</select>
+			</p>
+
+			<table class="attendees-table">
+				<caption>Students registered for campus events</caption>
+				<thead>
+					<tr>
+						<th scope="col">Attendee</th>
+						<th scope="col">University Email</th>
+						<th scope="col">Event</th>
+						<th scope="col">Venue</th>
+						<th scope="col">Registered At</th>
+						<th scope="col">Status</th>
+					</tr>
+				</thead>
+				<tbody id="attendees-list">
+					<tr class="empty-attendees">
+						<td colspan="6">No registrations yet.</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<p>Questions? Contact <a href="mailto:events@dlsud.edu.ph">events@dlsud.edu.ph</a></p>
+		<p>&copy; 2026 CampusConnect · University Campus Events</p>
+	</footer>
+</body>
+</html>
